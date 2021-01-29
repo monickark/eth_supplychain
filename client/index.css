@@ -1,0 +1,117 @@
+.green nav {
+    background-color: #3ea242 !important;
+}
+.blue nav {
+    background-color: #1983d7 !important;
+}
+.red nav {
+    background-color: #d92619 !important;
+}
+.green nav a.active {
+    background-color: #039909;
+}
+.red nav a.active {
+    background-color: #b6170b;
+}
+.blue nav a.active {
+    background-color: #0e6eba;
+}
+
+ /* label color */
+ .has-error label {
+    color: #b6170b;
+  }
+  .has-error > input[type=text] {
+    border-bottom: 1px solid #b6170b;
+    box-shadow: 0 1px 0 0 #b6170b;
+    color: #b6170b;
+  }
+  .has-success label {
+    color: #039909;
+  }
+  .has-success > input[type=text] {
+    border-bottom: 1px solid #039909;
+    box-shadow: 0 1px 0 0 #039909;
+    color: #039909;
+  }
+ 
+div[class^="errorTxt"] {
+    color: #d92619;
+}
+nav {
+    padding: 0em 3em;    
+    margin-bottom: 3em;
+}
+.row {
+    margin-bottom: 0px;
+}
+.header {
+    color: #fff;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 0em;
+}
+.btn-danger {
+    background-color: #EF5350 !important;
+}
+.btn-success {
+    background-color: #66BB6A  !important;
+}
+.btn-small {
+    height: 24.4px;
+    line-height: 18.4px;
+    font-size: 11px;
+}
+.tab-desc {
+    background: #fff;
+}
+*[class^='success-data'] {
+    color: #558b2f;
+    font-weight: 700;
+    font-size: 1.3em;
+}
+*[id^='errorHolder'] {
+    margin-top: 1em;
+    color: #d50000;
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+ul:not(.browser-default) {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.tabs {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 48px;
+    width: 100%;
+    background-color: #fff;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.tab-desc {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);    
+    padding: 1em !important;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 350px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }
+

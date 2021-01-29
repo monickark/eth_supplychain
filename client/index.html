@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Slenex Supply Chain</title>
+  <!-- Compiled and minified CSS -->
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"  rel="stylesheet">
+  
+  
+<link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+    <body class="green">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Supply Chain - User</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="active" href="index.html">User</a></li>
+            <li><a href="farmer.html">Farmer</a></li>
+            <li><a href="supplier.html">Supplier</a></li>
+          </ul>
+        </div>
+      </nav>
+        <div class="container">
+            <div class="row">
+              <div class="s12"> 
+                <ul class="tabs tabs tab-demo z-depth-1">
+                  <li class="tab col s6"><a href="#ftest1">Add User</a></li>
+                  <li class="tab col s6"><a href="#ftest2">User List</a></li>
+                </ul>
+              </div>
+              <div id="ftest1" class="col s12 tab-desc">   
+                  <div></div>
+                  
+                  <form class="formValidate" id="userForm"  novalidate="novalidate">
+                      <div class="row">
+                        <div class="input-field col s6">                            
+                            <label for="firstName">First Name</label>
+                              <input id="firstName" name="firstName" type="text" class="validate" data-error=".errorTxt1">
+                              <div class="errorTxt1"></div>
+                          </div>
+                          <div class="input-field col s6">
+                            <label for="lastName">Last Name</label>
+                              <input id="lastName" name="lastName" type="text" data-error=".errorTxt2" >                              
+                              <div class="errorTxt2"></div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s6">
+                            <label for="age">Age</label>
+                              <input id="age" name="age"  type="text"  data-error=".errorTxt3">
+                              <div class="errorTxt3"></div>
+                          </div>
+                          <div class="input-field col s6">                            
+                            <label for="city">City</label>
+                              <input id="city" name="city" type="text" data-error=".errorTxt4">
+                              <div class="errorTxt4"></div>
+                          </div>
+                        <div class="input-field col s12">
+                              <button class="btn waves-effect waves-light green" type="submit" 
+                              id="buttonUserSave" name="action">ADD USER
+                              <i class="material-icons right">send</i>                   
+                              </button>
+                            <div id="errorHolderUser"></div>                       
+                        </div>                      
+                        </div>
+                      </form>
+                        <div id="output-user">
+                          <div class="success-data-user"></div>
+                          <div class="temp1">
+                              <strong>First Name: </strong>  <span class="tfname"></span> <br/>
+                              <strong> Last Name: </strong>  <span class="tlname"></span> <br/>
+                              <strong> Age: </strong> <span class="tempage"></span> <br/>
+                                  <strong> city: </strong>   <span class="tcity"></span> <br/>
+                          </div>
+                      </div>
+                  </div>
+      
+                     
+          </div>
+
+           <div id="ftest2" class="col s12 tab-desc table-wrapper-scroll-y ">
+            <table>
+              <thead>
+                <tr>
+                   <th>User ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+              </thead>            
+              </thead>            
+              <tbody class="dataBody"> 
+                <tr class="dataRow" >
+                  <td class="did"></td>
+                  <td class="dfname"></td>
+                  <td class="dlname"></td>
+                  <td class="dage"></td>
+                  <td class="dcity"></td>   
+                </tr>
+              </tbody>
+            </table>
+
+           </div>
+          </div>
+            
+            
+      </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="dist/bundle.js"></script>
+<script>
+$(document).ready(function(){ 
+
+    $('.tabs').tabs();
+    $('select').formSelect();
+    $('.pushpin-demo-nav').each(function() {
+    var $this = $(this);
+    var $target = $('#' + $(this).attr('data-target'));
+    $this.pushpin({
+      top: $target.offset().top,
+      bottom: $target.offset().top + $target.outerHeight() - $this.height()
+    });
+  });
+  });
+</script>
+</body>
+</html>

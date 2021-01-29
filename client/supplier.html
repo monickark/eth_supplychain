@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Slenex Supply Chain</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+  
+<link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+<body class="red">
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Supply Chain - Supplier</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="index.html">User</a></li>
+        <li><a href="farmer.html">Farmer</a></li>
+        <li><a class="active" href="supplier.html">Supplier</a></li>
+      </ul>
+    </div>
+  </nav>
+        <div class="container">
+            <div class="row">
+              <div class="s12">
+                <ul class="tabs tabs tab-demo z-depth-1">
+                  <li class="tab col s3"><a class="active" href="#mtest3">Received Goods</a></li>
+                  <li class="tab col s3"><a href="#mtest4">Inventory Goods</a></li>
+                  <li class="tab col s3"><a href="#mtest1">Add Invoice</a></li>
+                  <li class="tab col s3"><a href="#mtest2">Invoice List</a></li>
+                </ul>
+              </div>
+              <div id="mtest1" class="col s12 tab-desc table-wrapper-scroll-y"> 
+                    <form class="formValidate" id="supplierForm">
+                      <div class="row">
+                        <div class="input-field col s4">
+                          <select id="sproductName" name="sproductName" class="validate sproductName" data-error=".errorTxt1">
+                            <option value="" disabled selected>Choose your Product</option>
+                          </select>
+                          <label> Product Name</label>
+                          <div class="errorTxt1"></div>
+                        </div>
+                        <div class="input-field col s4">
+                          <input id="sinventoryId" name="sinventoryId" type="text" class="validate" data-error=".errorTxt2">
+                          <label for="sinventoryId">Invoice Id</label>
+                          <div class="errorTxt2"></div>
+                        </div> 
+                        <div class="input-field col s4">
+                            <select id="smanufacturer" name="smanufacturer" class="validate" data-error=".errorTxt3">
+                              <option value="" disabled selected>Choose your option</option>
+                              <option value="Monicka">Monicka</option>
+                              <option value="Aadhavan">Aadhavan</option>
+                              <option value="Madhavan">Madhavan</option>
+                            </select>
+                            <label> Manufacturer</label>
+                            <div class="errorTxt3"></div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s4">
+                          <input id="sinvoiceDate" name="sinvoiceDate" class="datepicker" type="text" class="validate" data-error=".errorTxt4">
+                          <label for="sinvoiceDate">Invoice Date</label>
+                          <div class="errorTxt4"></div>
+                        </div>
+                      
+                        <div class="input-field col s4">
+                            <input id="sprice" name="sprice" type="text" class="validate" data-length="5" data-error=".errorTxt5">
+                            <label for="sprice" >Price</label>
+                            <div class="errorTxt5"></div>
+                        </div>
+                        <div class="input-field col s4">
+                          <input id="smeasurement" name="smeasurement" type="text" class="validate" data-error=".errorTxt6">
+                            <label for="smeasurement">Measurement</label>
+                            <div class="errorTxt6"></div>
+                        </div>
+                        <div class="input-field col s4">
+                          <input id="squantity" name="squantity" type="text" class="validate" data-length="5" data-error=".errorTxt7">
+                          <label for="squantity">Quantity</label>
+                          <div class="errorTxt7"></div>
+                        </div>
+                        <div class="input-field col s4">
+                          <input id="samount" name="samount" type="text"   readonly="readonly" >
+                          <label for="samount">Amount</label>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="input-field col s12">
+                        <button class="btn waves-effect waves-light red" type="submit" id="buttonSupplierSave" name="action">Submit
+                        <i class="material-icons right">send</i>                   
+                        </button>
+                        <div id="errorHolderSupplier"></div>
+                        </div>
+                        </div>
+                        </form>
+                        <div id="output-supplier">
+                          <div class="success-data-supplier"></div>
+                          <div class="ss_temp">
+                              <strong>Product Name: </strong>  <span class="ss_pname"></span> <br/>
+                              <strong>Invoice Date: </strong>  <span class="ss_indate"></span> <br/>
+                              <strong>Manufacturer: </strong>  <span class="ss_manufacturer"></span> <br/>
+                              <strong>Price: </strong> <span class="ss_price"></span> <br/>
+                              <strong>Measurement: </strong>   <span class="ss_measurement
+                              "></span> <br/>
+                              <strong>Quantity: </strong> <span class="ss_quantity
+                              "></span> <br/>
+                              <strong>Amount: </strong>   <span class="ss_amount"></span> <br/>
+                          </div>
+                        </div>
+                  </div>
+                </div> 
+
+           <div id="mtest2" class="col s12 tab-desc table-wrapper-scroll-y ">
+            <table>
+              <thead>
+                <tr>
+                    <th>Invoice Id</th>
+                    <th>Invoice Date</th>
+                    <th>Product Name</th>
+                    <th>Manufacturer</th>
+                    <th>Price</th>
+                    <th>Measurement</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                </tr>
+              </thead>            
+              <tbody class="sdataBody"> 
+                <tr class="sdataRow" >
+                  <td class="sid"></td>
+                  <td class="sindate"></td>
+                  <td class="spname"></td>
+                  <td class="smanufacturer"></td>
+                  <td class="sprice"></td>
+                  <td class="smeasurement"></td>
+                  <td class="squantity"></td>
+                  <td class="samount"></td>
+                </tr>
+              </tbody>
+            </table>
+
+           </div>
+           <div id="mtest3" class="col s12 tab-desc table-wrapper-scroll-y ">
+            <table>
+              <thead>
+                <tr>
+                    <th>Received Inv Id</th>
+                    <th>Invoice Date</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Measurement</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                </tr>
+              </thead>            
+              <tbody class="sr_dataBody"> 
+                <tr class="sr_dataRow" >
+                  <td class="sr_id"></td>
+                  <td class="sr_indate"></td>
+                  <td class="sr_pname"></td>
+                  <td class="sr_price"></td>
+                  <td class="sr_measurement"></td>
+                  <td class="sr_quantity"></td>
+                  <td class="sr_amount"></td>
+                  <td class="sr_action"></td>
+                </tr>
+              </tbody>
+            </table>
+
+           </div>
+           <div id="mtest4" class="col s12 tab-desc table-wrapper-scroll-y">
+            <table>
+              <thead>
+                <tr>
+                    <th>Inventory Id</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Measurement</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                </tr>
+              </thead>            
+              <tbody class="gi_dataBody"> 
+                <tr class="gi_dataRow" >
+                  <td class="gi_id"></td>
+                  <td class="gi_pname"></td>
+                  <td class="gi_price"></td>
+                  <td class="gi_measurement"></td>
+                  <td class="gi_quantity"></td>
+                  <td class="gi_amount"></td>
+                </tr>
+              </tbody>
+            </table>
+
+           </div>
+
+          </div>
+      </div>    
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="dist/bundle.js"></script>
+<script src="js/valid.js"></script>
+<script>
+$(document).ready(function(){
+  
+  $('#smanufacturer').formSelect();
+  
+  var options = {
+      defaultDate: new Date(),
+      setDefaultDate: true,
+      format : "dd-mm-yyyy"
+    };
+    var elems = document.querySelector('.datepicker');
+    var instance = M.Datepicker.init(elems, options);
+    instance.setDate(new Date());
+   $('.tabs').tabs();   
+   $('.pushpin-demo-nav').each(function() {
+   var $this = $(this);
+   var $target = $('#' + $(this).attr('data-target'));
+   $this.pushpin({
+     top: $target.offset().top,
+     bottom: $target.offset().top + $target.outerHeight() - $this.height()
+   });    
+ });
+ });
+ </script>
+</body>
+</html>
