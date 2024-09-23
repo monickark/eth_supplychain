@@ -15,5 +15,5 @@ app.get('/', (req, res) => {
   });
 
   app.listen(PORT, () => {
-    console.log(`Slenex First Bloackchain DAPP Application `);
+    console.log(`Slenex First Bloackchain DAPP Application running in port :: `, PORT );
   });

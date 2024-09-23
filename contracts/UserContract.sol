@@ -1,11 +1,11 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.0;
 
-contract HelloWorld {
+contract UserContract {
 
 uint public userCount = 0;
 
 
-constructor() public{
+constructor(){
     createUser ("Monicka", "Akilan", 30, "Chennai");
 }
 
@@ -24,9 +24,8 @@ event profileTips(string firstName, string lastName, uint age,
 mapping(uint => User) public Users;
 
  function createUser(string memory _firstName, string memory _lastName, uint _age, 
- string memory  _city) public payable{
+ string memory  _city) public {
     userCount ++;
-    // address(msg.sender).transfer(msg.value);
      Users[userCount] = User(userCount, _firstName, _lastName, _age, _city, 20, msg.sender);
     emit profileTips(_firstName, _lastName, _age,  _city, msg.value,  msg.sender);
  }
