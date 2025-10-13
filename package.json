@@ -1,28 +1,13 @@
 {
-  "name": "6.-slenapp",
-  "version": "1.0.0",
-  "main": "truffle-config.js",
-  "directories": {
-    "test": "test"
-  },
+  "name": "eth-supplychain",
+  "version": "0.1.0",
+  "description": "Ethereum-based supply chain tracking MVP using NFTs and roles",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node_modules/.bin/webpack && node server/main.js",
-    "webpack": "node_modules/.bin/webpack --watch",
-    "start": "node server/main.js"
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.js --network sepolia"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@truffle/hdwallet-provider": "^2.1.15",
-    "dotenv": "8.2.0",
-    "express": "4.17.1",
-    "truffle-hdwallet-provider": "1.0.17",
-    "webpack": "^4.43.0"
-  },
-  "devDependencies": {
-    "truffle-contract": "4.0.31",
-    "webpack-cli": "3.3.11"
-  },
-  "description": ""
+  "keywords": ["ethereum", "solidity", "supply-chain", "nft"],
+  "author": "Your Name",
+  "license": "MIT"
 }
